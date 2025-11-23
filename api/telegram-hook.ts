@@ -15,20 +15,15 @@ export async function handleStartCommand(ctx) {
 
   // Welcome message with Markdown formatting
   const reply = `
-Unlock 100% Free VPN Access — No Limits, No Trials
+🌎 Get a daily strategy delivered to you, with proven methods to generate legitimate revenue online, on your own schedule
 
-Enjoy fast, secure, and private VPN connections with zero cost.
-No sign-ups. No restrictions.
+Daily Proven Strategies delivered to you
 
-Instantly connect to global servers
+Generate legitimate revenue
 
-Stay protected on public Wi-Fi and keep your data safe
+Work perfectly on your schedule
 
-High-speed performance for smooth browsing
-
-Works on all devices — anytime, anywhere
-
-Ready to browse without borders? Get today's list below
+Ready to start? see below
  `;
 
   try {
@@ -36,8 +31,8 @@ Ready to browse without borders? Get today's list below
       parse_mode: "Markdown",
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Get Today's Socks5", callback_data: "socks_5" }],
-          [{ text: "Get Today's Socks4", callback_data: "socks_4" }],
+          [{ text: "Strategy 1", callback_data: "socks_5" }],
+          [{ text: "Strategy 2", callback_data: "socks_4" }],
         ],
       },
     });
@@ -52,7 +47,7 @@ bot.action("socks_5", async (ctx) => {
   await ctx.answerCbQuery();
   await ctx.replyWithDocument({
     url: "https://github.com/emerur/unlimited_bot/blob/main/socks5.txt", // Replace with your actual file URL
-    filename: "Today's socks5", // Optional: custom filename
+    filename: "Strategy 1", // Optional: custom filename
   });
 });
 // Socks 4
@@ -60,7 +55,7 @@ bot.action("socks_4", async (ctx) => {
   await ctx.answerCbQuery();
   await ctx.replyWithDocument({
     url: "https://github.com/emerur/unlimited_bot/blob/main/socks4.txt", // Replace with your actual file URL
-    filename: "Today's socks4", // Optional: custom filename
+    filename: "Strategy 2", // Optional: custom filename
   });
 });
 
